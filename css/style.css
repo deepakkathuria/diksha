@@ -388,10 +388,23 @@ footer .link-group a:hover{
     text-decoration: none;
   }
 
-
-
-  /* Card with beautiful shadowed border */
-.card.shadow-border {
+  .portfolio-body {
+    padding: 20px;
+  }
+  
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .post {
+    flex: 1 1 calc(25% - 20px); /* 4 cards per row with spacing */
+    max-width: calc(25% - 20px); /* Ensures cards fit within the row */
+    box-sizing: border-box; /* Maintain padding within card size */
+  }
+  
+  .card.shadow-border {
     border: 1px solid rgba(0, 0, 0, 0.1); /* Soft border */
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); /* Defined shadow effect */
     border-radius: 12px; /* Rounded corners */
@@ -412,5 +425,18 @@ footer .link-group a:hover{
     margin: 10px auto; /* Center image horizontally with top/bottom spacing */
     border-radius: 10px; /* Slightly rounded image corners */
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for image */
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 992px) {
+    .post {
+      flex: 1 1 calc(50% - 20px); /* 2 cards per row for medium screens */
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .post {
+      flex: 1 1 100%; /* Full width for small screens */
+    }
   }
   
